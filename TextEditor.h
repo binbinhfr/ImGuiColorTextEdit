@@ -217,6 +217,7 @@ public:
 
 	Coordinates GetCursorPosition() const { return GetActualCursorCoordinates(); }
 	void SetCursorPosition(const Coordinates& aPosition);
+	void EnsureCursorVisible();
 
 	inline void SetHandleMouseInputs    (bool aValue){ mHandleMouseInputs    = aValue;}
 	inline bool IsHandleMouseInputsEnabled() const { return mHandleKeyboardInputs; }
@@ -316,7 +317,6 @@ private:
 	void ColorizeRange(int aFromLine = 0, int aToLine = 0);
 	void ColorizeInternal();
 	float TextDistanceToLineStart(const Coordinates& aFrom) const;
-	void EnsureCursorVisible();
 	int GetPageSize() const;
 	std::string GetText(const Coordinates& aStart, const Coordinates& aEnd) const;
 	Coordinates GetActualCursorCoordinates() const;
